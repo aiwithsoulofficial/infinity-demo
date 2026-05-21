@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skin Assessment - Infinity Skin Care Clinic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Judson:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:       #C5963A;
+      --gold-light: #DFBD6D;
+      --gold-dark:  #A67C2E;
+      --charcoal:   #1F2124;
+      --text:       #383838;
+      --text-light: #7A7268;
+      --cream:      #FAF6F0;
+      --cream-dark: #F2EBE0;
+      --white:      #FFFFFF;
+      --teal:       #00D4BC;
+      --teal-dark:  #0A2A28;
+      --border:     #E8DDD0;
+      --radius-sm:  8px;
+      --radius-md:  14px;
+      --radius-lg:  20px;
+      --shadow-sm:  0 2px 8px rgba(31,33,36,0.07);
+      --shadow-md:  0 6px 24px rgba(31,33,36,0.11);
+      --shadow-lg:  0 12px 40px rgba(31,33,36,0.14);
+      --trans:      all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: var(--cream);
+      color: var(--text);
+      min-height: 100vh;
+      background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+      background-repeat: repeat;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Demo banner ── */
+    .demo-banner {
+      background: var(--teal-dark);
+      color: var(--teal);
+      text-align: center;
+      padding: 8px 16px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 100;
+    }
+
+    /* ── Layout wrapper ── */
+    .page-wrap {
+      position: relative;
+      z-index: 1;
+      min-height: calc(100vh - 34px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px 80px;
+    }
+
+    /* ── Progress indicator ── */
+    .progress-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 40px;
+    }
+
+    .progress-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+      transition: var(--trans);
+    }
+
+    .progress-dot.active {
+      background: var(--gold);
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    .progress-dot.done {
+      background: var(--gold-light);
+    }
+
+    /* ── Card container (all steps live here) ── */
+    .card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      padding: 48px 52px;
+      width: 100%;
+      max-width: 760px;
+      border: 1px solid var(--border);
+    }
+
+    /* ── Steps (show/hide) ── */
+    .step {
+      display: none;
+      animation: fadeSlideIn 0.38s cubic-bezier(0.4, 0, 0.2, 1) both;
+    }
+
+    .step.active { display: block; }
+
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Logo ── */
+    .logo-wrap {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .logo-wrap img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    /* ── Typography ── */
+    h1, h2, h3 {
+      font-family: 'Judson', serif;
+      color: var(--charcoal);
+      line-height: 1.2;
+    }
+
+    .step-heading {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .step-sub {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text-light);
+      text-align: center;
+      line-height: 1.65;
+      max-width: 520px;
+      margin: 0 auto 36px;
+    }
+
+    /* ── Gold divider ── */
+    .gold-rule {
+      width: 52px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold-light));
+      margin: 16px auto 28px;
+      border-radius: 2px;
+    }
+
+    /* ── CTA button ── */
+    .btn-gold {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      color: var(--white);
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 15px 38px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: var(--trans);
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(197,150,58,0.32);
+    }
+
+    .btn-gold:hover {
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+      box-shadow: 0 6px 26px rgba(197,150,58,0.45);
+      transform: translateY(-1px);
+    }
+
+    .btn-gold:active { transform: translateY(0); }
+
+    .btn-gold.full { display: block; width: 100%; text-align: center; }
+
+    /* ── Step 1 - Welcome ── */
+    #step-welcome { text-align: center; }
+
+    #step-welcome h1 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      margin-bottom: 8px;
+    }
+
+    #step-welcome .step-sub {
+      margin-bottom: 40px;
+    }
+
+    /* ── Step 2 - Path cards ── */
+    .path-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 0;
+    }
+
+    .path-card {
+      border: 2px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      cursor: pointer;
+      transition: var(--trans);
+      background: var(--cream);
+      position: relative;
+    }
+
+    .path-card:hover {
+      border-color: var(--gold-light);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .path-card.selected {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 1px var(--gold), var(--shadow-md);
+    }
+
+    .path-card.selected .path-check {
+      opacity: 1;
+    }
+
+    .path-card-img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+
+    .path-card-body {
+      padding: 16px;
+    }
+
+    .path-card-title {
+      font-family: 'Judson', serif;
+      font-size: 0.95rem;
+      color: var(--charcoal);
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+
+    .path-card-sub {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .path-check {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 26px;
+      height: 26px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: var(--trans);
+      box-shadow: 0 2px 8px rgba(197,150,58,0.4);
+    }
+
+    .path-check svg { width: 13px; height: 13px; }
+
+    /* ── Step 3 - Follow-up questions ── */
+    .question-block {
+      margin-bottom: 28px;
+    }
+
+    .question-label {
+      font-family: 'Judson', serif;
+      font-size: 1.1rem;
+      color: var(--charcoal);
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      padding: 9px 20px;
+      border: 1.5px solid var(--gold);
+      border-radius: 50px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.83rem;
+      color: var(--gold-dark);
+      background: transparent;
+      cursor: pointer;
+      transition: var(--trans);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .pill:hover {
+      background: rgba(197,150,58,0.08);
+      border-color: var(--gold-dark);
+    }
+
+    .pill.selected {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      border-color: transparent;
+      color: var(--white);
+      box-shadow: 0 3px 12px rgba(197,150,58,0.3);
+    }
+
+    /* ── Step 4 - Lead form ── */
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-light);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      background: var(--cream);
+      transition: var(--trans);
+      outline: none;
+    }
+
+    .form-input:focus {
+      border-color: var(--gold);
+      background: var(--white);
+      box-shadow: 0 0 0 3px rgba(197,150,58,0.12);
+    }
+
+    .form-input::placeholder { color: #B8B0A6; }
+
+    .form-small {
+      font-size: 0.76rem;
+      color: var(--text-light);
+      text-align: center;
+      margin-top: 14px;
+      line-height: 1.5;
+    }
+
+    /* ── Step 5 - Result ── */
+    .result-image {
+      width: 100%;
+      max-width: 480px;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+      margin: 0 auto 28px;
+      display: block;
+      box-shadow: var(--shadow-md);
+    }
+
+    .result-message {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.75;
+      text-align: center;
+      max-width: 540px;
+      margin: 0 auto 32px;
+    }
+
+    .result-phone {
+      text-align: center;
+      font-size: 0.88rem;
+      color: var(--text-light);
+      margin-top: 16px;
+    }
+
+    .result-phone a {
+      color: var(--gold-dark);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .result-phone a:hover { text-decoration: underline; }
+
+    .result-name-accent {
+      color: var(--gold-dark);
+      font-style: italic;
+    }
+
+    /* ── Back link ── */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      color: var(--text-light);
+      cursor: pointer;
+      margin-bottom: 28px;
+      background: none;
+      border: none;
+      font-family: 'Open Sans', sans-serif;
+      transition: var(--trans);
+      padding: 0;
+    }
+
+    .back-link:hover { color: var(--gold-dark); }
+
+    .back-link svg { width: 14px; height: 14px; }
+
+    /* ── Centered CTA wrapper ── */
+    .cta-center { text-align: center; }
+
+    /* ── Tagline / accent ── */
+    .tagline {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    /* ── Section sub-label ── */
+    .section-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 6px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 680px) {
+      .card { padding: 32px 22px; }
+      .path-grid { grid-template-columns: 1fr; }
+      .path-card { display: grid; grid-template-columns: 110px 1fr; align-items: center; }
+      .path-card-img { width: 110px; height: 90px; aspect-ratio: unset; }
+      .path-check { top: 8px; right: 8px; }
+    }
+
+    @media (max-width: 400px) {
+      .card { padding: 26px 16px; }
+      .pill { font-size: 0.78rem; padding: 8px 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Demo Banner -->
+  <div class="demo-banner">Clinic Catalyst Demo &nbsp;&mdash;&nbsp; Infinity Skin Care Clinic</div>
+
+  <div class="page-wrap">
+
+    <!-- Progress dots -->
+    <div class="progress-wrap" id="progressWrap" aria-label="Assessment progress">
+      <div class="progress-dot active" data-step="1"></div>
+      <div class="progress-dot" data-step="2"></div>
+      <div class="progress-dot" data-step="3"></div>
+      <div class="progress-dot" data-step="4"></div>
+      <div class="progress-dot" data-step="5"></div>
+    </div>
+
+    <div class="card" role="main">
+
+      <!-- ══════════════════════════════════════
+           STEP 1 - Welcome
+      ══════════════════════════════════════ -->
+      <div class="step active" id="step-welcome" aria-labelledby="welcome-heading">
+
+        <div class="logo-wrap">
+          <img
+            src="https://infinityskincareclinic.com.au/wp-content/uploads/2025/03/main-logo.png"
+            alt="Infinity Skin Care Clinic"
+            height="48"
+          />
+        </div>
+
+        <span class="tagline">Personalised Assessment</span>
+
+        <h1 id="welcome-heading">What's your skin<br>telling you?</h1>
+
+        <div class="gold-rule"></div>
+
+        <p class="step-sub">
+          This takes 60 seconds. No medical jargon, just honest questions about what's bothering you.
+        </p>
+
+        <div class="cta-center">
+          <button class="btn-gold" onclick="goToStep(2)" aria-label="Start the skin assessment">
+            Start My Assessment
+          </button>
+        </div>
+
+      </div>
+
+      <!-- ══════════════════════════════════════
+           STEP 2 - Choose your concern
+      ══════════════════════════════════════ -->
+      <div class="step" id="step-path" aria-labelledby="path-heading">
+
+        <p class="section-eyebrow">Step 1 of 3</p>
+        <h2 class="step-heading" id="path-heading">Which of these sounds most like you?</h2>
+        <div class="gold-rule"></div>
+
+        <div class="path-grid" role="radiogroup" aria-label="Choose your primary skin concern">
+
+          <!-- Path 1 - Skin texture / breakouts -->
+          <div
+            class="path-card"
+            role="radio"
+            aria-checked="false"
+            tabindex="0"
+            data-path="1"
+            onclick="selectPath(1)"
+            onkeydown="if(event.key==='Enter'||event.key===' ')selectPath(1)"
+            aria-label="My skin looks dull, scarred, or keeps breaking out"
+          >
+            <div class="path-check" aria-hidden="true">
+              <svg viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 6.5L5.2 10L11 3" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <img
+              class="path-card-img"
+              src="https://infinityskincareclinic.com.au/wp-content/uploads/2025/02/Results-5.jpg"
+              alt="Skin texture and tone results"
+              loading="lazy"
+            />
+            <div class="path-card-body">
+              <p class="path-card-title">My skin looks dull, scarred, or keeps breaking out</p>
+              <p class="path-card-sub">Pigmentation, acne, rough texture, uneven tone</p>
+            </div>
+          </div>
+
+          <!-- Path 2 - Aging / firmness -->
+          <div
+            class="path-card"
+            role="radio"
+            aria-checked="false"
+            tabindex="0"
+            data-path="2"
+            onclick="selectPath(2)"
+            onkeydown="if(event.key==='Enter'||event.key===' ')selectPath(2)"
+            aria-label="My face is losing its shape and firmness"
+          >
+            <div class="path-check" aria-hidden="true">
+              <svg viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 6.5L5.2 10L11 3" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <img
+              class="path-card-img"
+              src="https://infinityskincareclinic.com.au/wp-content/uploads/2025/02/Results-1.jpg"
+              alt="Skin firmness and aging results"
+              loading="lazy"
+            />
+            <div class="path-card-body">
+              <p class="path-card-title">My face is losing its shape and firmness</p>
+              <p class="path-card-sub">Fine lines, sagging, loss of definition</p>
+            </div>
+          </div>
+
+          <!-- Path 3 - Hair -->
+          <div
+            class="path-card"
+            role="radio"
+            aria-checked="false"
+            tabindex="0"
+            data-path="3"
+            onclick="selectPath(3)"
+            onkeydown="if(event.key==='Enter'||event.key===' ')selectPath(3)"
+            aria-label="My hair is thinning and I can see my scalp"
+          >
+            <div class="path-check" aria-hidden="true">
+              <svg viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 6.5L5.2 10L11 3" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <img
+              class="path-card-img"
+              src="https://infinityskincareclinic.com.au/wp-content/uploads/2025/02/Results-4.jpg"
+              alt="Hair restoration results"
+              loading="lazy"
+            />
+            <div class="path-card-body">
+              <p class="path-card-title">My hair is thinning and I can see my scalp</p>
+              <p class="path-card-sub">Hair loss, widening part, receding</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ══════════════════════════════════════
+           STEP 3 - Follow-up questions
+      ══════════════════════════════════════ -->
+      <div class="step" id="step-questions" aria-labelledby="questions-heading">
+
+        <button class="back-link" onclick="goToStep(2)" aria-label="Go back to concern selection">
+          <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M9 2L4 7L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Back
+        </button>
+
+        <p class="section-eyebrow">Step 2 of 3</p>
+        <h2 class="step-heading" id="questions-heading">Just a few quick questions</h2>
+        <div class="gold-rule"></div>
+
+        <!-- Questions injected by JS -->
+        <div id="questionsContainer"></div>
+
+        <div class="cta-center" style="margin-top: 32px;">
+          <button class="btn-gold" id="toFormBtn" onclick="goToStep(4)" disabled aria-label="Continue to enter your details" style="opacity:0.45; cursor:not-allowed;">
+            Continue
+          </button>
+        </div>
+
+      </div>
+
+      <!-- ══════════════════════════════════════
+           STEP 4 - Lead capture form
+      ══════════════════════════════════════ -->
+      <div class="step" id="step-form" aria-labelledby="form-heading">
+
+        <button class="back-link" onclick="goToStep(3)" aria-label="Go back to questions">
+          <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M9 2L4 7L9 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Back
+        </button>
+
+        <p class="section-eyebrow">Step 3 of 3</p>
+        <h2 class="step-heading" id="form-heading">Your personalised skin plan is ready</h2>
+        <div class="gold-rule"></div>
+
+        <p class="step-sub" style="margin-bottom: 28px;">
+          Enter your details below and our team will be in touch within 24 hours with your custom recommendation.
+        </p>
+
+        <form id="captureForm" onsubmit="submitForm(event)" novalidate>
+
+          <div class="form-group">
+            <label class="form-label" for="firstName">First name</label>
+            <input
+              class="form-input"
+              type="text"
+              id="firstName"
+              name="firstName"
+              placeholder="Your first name"
+              autocomplete="given-name"
+              required
+              aria-required="true"
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">Email address</label>
+            <input
+              class="form-input"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@email.com"
+              autocomplete="email"
+              required
+              aria-required="true"
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="phone">
+              Phone
+              <span style="font-weight:400; text-transform:none; letter-spacing:0; font-size:0.78rem; color:var(--text-light);"> (optional)</span>
+            </label>
+            <input
+              class="form-input"
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="0400 000 000"
+              autocomplete="tel"
+            />
+          </div>
+
+          <div style="margin-top: 28px;">
+            <button type="submit" class="btn-gold full" aria-label="Submit and get your personalised skin plan">
+              Get My Personalised Skin Plan
+            </button>
+          </div>
+
+          <p class="form-small">No spam. Just your personalised recommendation from our team.</p>
+
+        </form>
+
+      </div>
+
+      <!-- ══════════════════════════════════════
+           STEP 5 - Result
+      ══════════════════════════════════════ -->
+      <div class="step" id="step-result" aria-labelledby="result-heading">
+
+        <div style="text-align:center;">
+
+          <div class="logo-wrap" style="margin-bottom: 20px;">
+            <img
+              src="https://infinityskincareclinic.com.au/wp-content/uploads/2025/03/main-logo.png"
+              alt="Infinity Skin Care Clinic"
+              height="40"
+            />
+          </div>
+
+          <h2 class="step-heading" id="result-heading">
+            Thank you, <span class="result-name-accent" id="resultName">there</span>!
+          </h2>
+
+          <div class="gold-rule"></div>
+
+          <img
+            id="resultImage"
+            class="result-image"
+            src=""
+            alt="Before and after results"
+          />
+
+          <p class="result-message" id="resultMessage"></p>
+
+          <a
+            href="https://bookings.gettimely.com/infinityskincareclinic"
+            target="_blank"
+            rel="noopener"
+            class="btn-gold"
+            aria-label="Book your consultation at Infinity Skin Care Clinic"
+          >
+            Book a Consultation
+          </a>
+
+          <p class="result-phone">
+            Or call us: <a href="tel:0381890785">(03) 8189 0785</a>
+          </p>
+
+        </div>
+
+      </div>
+
+    </div><!-- .card -->
+  </div><!-- .page-wrap -->
+
+  <script>
+    // ── State ──────────────────────────────────────────────
+    const state = {
+      currentStep: 1,
+      selectedPath: null,
+      answers: {},
+      leadData: {}
+    };
+
+    // ── Question definitions per path ──────────────────────
+    const questionSets = {
+      1: [
+        {
+          id: 'q1',
+          label: 'How long has this been bothering you?',
+          options: ['Under 6 months', '6-12 months', 'Over a year', 'As long as I can remember']
+        },
+        {
+          id: 'q2',
+          label: 'What have you already tried?',
+          options: ['Nothing yet', 'Skincare products', 'Over the counter treatments', 'Professional treatments']
+        },
+        {
+          id: 'q3',
+          label: 'How does it affect your confidence?',
+          options: ['A little', 'Quite a bit', 'I think about it every day']
+        }
+      ],
+      2: [
+        {
+          id: 'q1',
+          label: 'When did you first notice changes?',
+          options: ['Recently', 'In the last year', "It's been gradual", "I'm being proactive"]
+        },
+        {
+          id: 'q2',
+          label: 'What bothers you most?',
+          options: ['Fine lines around eyes/mouth', 'Sagging jawline', 'Overall loss of firmness', 'All of the above']
+        },
+        {
+          id: 'q3',
+          label: 'What matters most to you?',
+          options: ['Natural-looking results', 'Long-lasting effects', 'Minimal downtime', 'All of the above']
+        }
+      ],
+      3: [
+        {
+          id: 'q1',
+          label: 'Where are you noticing changes?',
+          options: ['Hairline', 'Crown', 'Part line', 'All over']
+        },
+        {
+          id: 'q2',
+          label: 'How long has this been happening?',
+          options: ['Just started noticing', '6-12 months', 'Over a year', 'Several years']
+        },
+        {
+          id: 'q3',
+          label: 'Have you tried anything for it?',
+          options: ['Nothing yet', 'Supplements', 'Topical treatments', 'Professional treatment']
+        }
+      ]
+    };
+
+    // ── Result copy per path ───────────────────────────────
+    const resultData = {
+      1: {
+        message: "Based on what you've told us, we'd love to sit down with you for a free skin consultation to assess your texture and tone concerns in person. Every skin story is different - yours deserves individual attention.",
+        image: 'https://infinityskincareclinic.com.au/wp-content/uploads/2025/02/Results-5.jpg',
+        imageAlt: 'Skin texture and tone results'
+      },
+      2: {
+        message: "Based on what you've told us, a consultation is the perfect next step. We'll assess your skin's firmness and structure, and map out a plan that delivers natural, lasting results.",
+        image: 'https://infinityskincareclinic.com.au/wp-content/uploads/2025/02/Results-1.jpg',
+        imageAlt: 'Skin firmness and aging results'
+      },
+      3: {
+        message: "Based on what you've told us, a free hair and scalp consultation is your ideal next step. We'll assess what's happening, explain why, and show you what's possible.",
+        image: 'https://infinityskincareclinic.com.au/wp-content/uploads/2025/02/Results-4.jpg',
+        imageAlt: 'Hair restoration results'
+      }
+    };
+
+    // ── Navigation ─────────────────────────────────────────
+    function goToStep(step) {
+      const currentEl = document.querySelector('.step.active');
+      if (currentEl) currentEl.classList.remove('active');
+
+      const targetEl = document.getElementById(stepId(step));
+      if (targetEl) {
+        targetEl.classList.add('active');
+        // Scroll card into view smoothly
+        targetEl.closest('.card').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+
+      state.currentStep = step;
+      updateProgress(step);
+    }
+
+    function stepId(n) {
+      return ['', 'step-welcome', 'step-path', 'step-questions', 'step-form', 'step-result'][n];
+    }
+
+    function updateProgress(active) {
+      document.querySelectorAll('.progress-dot').forEach((dot, i) => {
+        const dotStep = i + 1;
+        dot.classList.remove('active', 'done');
+        if (dotStep === active) dot.classList.add('active');
+        else if (dotStep < active) dot.classList.add('done');
+      });
+    }
+
+    // ── Path selection ─────────────────────────────────────
+    function selectPath(path) {
+      state.selectedPath = path;
+      state.answers = {};
+
+      // Update card UI
+      document.querySelectorAll('.path-card').forEach(card => {
+        const isSelected = parseInt(card.dataset.path) === path;
+        card.classList.toggle('selected', isSelected);
+        card.setAttribute('aria-checked', isSelected ? 'true' : 'false');
+      });
+
+      // Build question step
+      buildQuestions(path);
+
+      // Slight delay for visual feedback before advancing
+      setTimeout(() => goToStep(3), 220);
+    }
+
+    // ── Build questions dynamically ────────────────────────
+    function buildQuestions(path) {
+      const container = document.getElementById('questionsContainer');
+      const questions = questionSets[path];
+      container.innerHTML = '';
+
+      questions.forEach((q, qIdx) => {
+        const block = document.createElement('div');
+        block.className = 'question-block';
+        block.setAttribute('role', 'group');
+        block.setAttribute('aria-labelledby', 'qlabel-' + q.id);
+
+        const label = document.createElement('span');
+        label.className = 'question-label';
+        label.id = 'qlabel-' + q.id;
+        label.textContent = q.label;
+        block.appendChild(label);
+
+        const pillGroup = document.createElement('div');
+        pillGroup.className = 'pill-group';
+        pillGroup.setAttribute('role', 'radiogroup');
+        pillGroup.setAttribute('aria-labelledby', 'qlabel-' + q.id);
+
+        q.options.forEach(opt => {
+          const pill = document.createElement('button');
+          pill.className = 'pill';
+          pill.type = 'button';
+          pill.textContent = opt;
+          pill.setAttribute('role', 'radio');
+          pill.setAttribute('aria-checked', 'false');
+          pill.setAttribute('aria-label', opt);
+
+          pill.addEventListener('click', () => {
+            // Deselect siblings
+            pillGroup.querySelectorAll('.pill').forEach(p => {
+              p.classList.remove('selected');
+              p.setAttribute('aria-checked', 'false');
+            });
+            // Select this one
+            pill.classList.add('selected');
+            pill.setAttribute('aria-checked', 'true');
+
+            state.answers[q.id] = opt;
+            checkAllAnswered(path);
+          });
+
+          pillGroup.appendChild(pill);
+        });
+
+        block.appendChild(pillGroup);
+
+        // Separator between questions
+        if (qIdx < questions.length - 1) {
+          const sep = document.createElement('div');
+          sep.style.cssText = 'height:1px;background:var(--border);margin-top:24px;';
+          block.appendChild(sep);
+        }
+
+        container.appendChild(block);
+      });
+    }
+
+    // ── Enable Continue once all answered ─────────────────
+    function checkAllAnswered(path) {
+      const total = questionSets[path].length;
+      const answered = Object.keys(state.answers).length;
+      const btn = document.getElementById('toFormBtn');
+      const allDone = answered >= total;
+      btn.disabled = !allDone;
+      btn.style.opacity = allDone ? '1' : '0.45';
+      btn.style.cursor = allDone ? 'pointer' : 'not-allowed';
+    }
+
+    // ── Form submission ────────────────────────────────────
+    function submitForm(e) {
+      e.preventDefault();
+
+      const firstName = document.getElementById('firstName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+
+      // Basic validation
+      if (!firstName) { focusAndShake('firstName'); return; }
+      if (!email || !email.includes('@')) { focusAndShake('email'); return; }
+
+      // Store lead data (demo - no backend)
+      state.leadData = { firstName, email, phone, path: state.selectedPath, answers: state.answers };
+      console.log('[Demo] Lead captured:', state.leadData);
+
+      // Populate result screen
+      const result = resultData[state.selectedPath];
+      document.getElementById('resultName').textContent = firstName;
+      document.getElementById('resultMessage').textContent = result.message;
+
+      const img = document.getElementById('resultImage');
+      img.src = result.image;
+      img.alt = result.imageAlt;
+
+      goToStep(5);
+    }
+
+    // ── Shake animation for invalid fields ─────────────────
+    function focusAndShake(id) {
+      const el = document.getElementById(id);
+      el.focus();
+      el.style.borderColor = '#C05050';
+      el.style.boxShadow = '0 0 0 3px rgba(192,80,80,0.15)';
+      el.addEventListener('input', () => {
+        el.style.borderColor = '';
+        el.style.boxShadow = '';
+      }, { once: true });
+    }
+
+    // ── Init ───────────────────────────────────────────────
+    // Ensure only step 1 is visible on load
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+      document.getElementById('step-welcome').classList.add('active');
+      updateProgress(1);
+    });
+  </script>
+
+</body>
+</html>

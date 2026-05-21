@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infinity Skin Care Clinic  -  Growth Roadmap | Clinic Catalyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --dark:#0A2A28;
+  --teal:#00D4BC;
+  --teal-mid:#00B4A0;
+  --gold:#D4A854;
+  --white:#FFFFFF;
+  --light-bg:#F4F8F7;
+  --warm-bg:#FDFBF7;
+  --muted:rgba(255,255,255,0.45);
+  --dark-muted:rgba(10,42,40,0.55);
+  --dot-grid:radial-gradient(circle, rgba(0,212,188,0.12) 1px, transparent 1px);
+}
+
+html{font-size:16px;scroll-behavior:smooth}
+body{
+  background:var(--white);
+  color:var(--dark);
+  font-family:'Open Sans',sans-serif;
+  font-weight:300;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* ─── TYPOGRAPHY ─────────────────────────────────────── */
+.label{
+  font-family:'Montserrat',sans-serif;
+  font-weight:700;
+  font-size:0.68rem;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--teal);
+  display:inline-block;
+}
+
+h1,h2,h3,h4{
+  font-family:'Montserrat',sans-serif;
+  font-weight:800;
+  line-height:1.15;
+}
+
+p{
+  font-family:'Open Sans',sans-serif;
+  font-weight:300;
+  line-height:1.75;
+}
+
+/* ─── SECTION WRAPPERS ───────────────────────────────── */
+.section{width:100%;padding:100px 0}
+.container{max-width:1080px;margin:0 auto;padding:0 40px}
+
+@media(max-width:768px){
+  .section{padding:72px 0}
+  .container{padding:0 24px}
+}
+
+/* ─── SECTION 1: COVER ───────────────────────────────── */
+#cover{
+  background-color:var(--dark);
+  background-image:var(--dot-grid);
+  background-size:32px 32px;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+#cover::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0,212,188,0.07) 0%, transparent 70%);
+  pointer-events:none;
+}
+
+.cover-inner{
+  position:relative;
+  z-index:1;
+  padding:40px 24px;
+}
+
+.cc-badge{
+  display:inline-block;
+  border:1px solid rgba(0,212,188,0.4);
+  padding:6px 18px;
+  font-family:'Montserrat',sans-serif;
+  font-weight:700;
+  font-size:0.65rem;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--teal);
+  margin-bottom:52px;
+}
+
+.cover-clinic{
+  font-family:'Montserrat',sans-serif;
+  font-weight:900;
+  font-size:clamp(2rem,5.5vw,4rem);
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--white);
+  margin-bottom:16px;
+}
+
+.cover-sub{
+  font-family:'Montserrat',sans-serif;
+  font-weight:700;
+  font-size:clamp(1.1rem,2.5vw,1.6rem);
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:40px;
+}
+
+.cover-meta{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  align-items:center;
+}
+
+.cover-prepared{
+  font-family:'Open Sans',sans-serif;
+  font-weight:400;
+  font-size:0.85rem;
+  color:var(--teal);
+  letter-spacing:0.08em;
+}
+
+.cover-date{
+  font-family:'Open Sans',sans-serif;
+  font-weight:300;
+  font-size:0.8rem;
+  color:var(--muted);
+  letter-spacing:0.06em;
+}
+
+.cover-divider{
+  width:56px;
+  height:2px;
+  background:var(--teal);
+  margin:32px auto;
+  opacity:0.5;
+}
+
+/* ─── SECTION 2: WHERE YOU ARE NOW ──────────────────── */
+#opportunity{background:var(--white)}
+
+.section-header{margin-bottom:56px}
+.section-header .label{margin-bottom:16px}
+.section-header h2{
+  font-size:clamp(1.6rem,3.5vw,2.4rem);
+  color:var(--dark);
+  max-width:660px;
+}
+
+.cards-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:2px;
+  background:rgba(10,42,40,0.08);
+}
+
+@media(max-width:640px){
+  .cards-grid{grid-template-columns:1fr}
+}
+
+.insight-card{
+  background:var(--white);
+  padding:40px 36px;
+  position:relative;
+}
+
+.insight-card::before{
+  content:"";
+  position:absolute;
+  top:0;left:0;
+  width:3px;
+  height:100%;
+  background:var(--teal);
+}
+
+.insight-number{
+  font-family:'Montserrat',sans-serif;
+  font-weight:900;
+  font-size:2.8rem;
+  color:rgba(0,212,188,0.1);
+  line-height:1;
+  margin-bottom:12px;
+  display:block;
+}
+
+.insight-card h3{
+  font-family:'Montserrat',sans-serif;
+  font-weight:700;
+  font-size:0.95rem;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  color:var(--dark);
+  margin-bottom:12px;
+}
+
+.insight-card p{
+  font-size:0.9rem;
+  color:rgba(10,42,40,0.65);
+}
+
+/* ─── SECTION 3: WHERE WE TAKE YOU ──────────────────── */
+#plan{background:var(--light-bg)}
+
+.phases-container{
+  position:relative;
+  padding-left:48px;
+}
+
+.phases-container::before{
+  content:"";
+  position:absolute;
+  left:15px;
+  top:20px;
+  bottom:20px;
+  width:2px;
+  background:linear-gradient(to bottom, var(--teal), rgba(0,212,188,0.15));
+}
+
+@media(max-width:640px){
+  .phases-container{padding-left:36px}
+  .phases-container::before{left:11px}
+}
+
+.phase{
+  position:relative;
+  margin-bottom:52px;
+}
+
+.phase:last-child{margin-bottom:0}
+
+.phase-dot{
+  position:absolute;
+  left:-48px;
+  top:4px;
+  width:32px;
+  height:32px;
+  background:var(--dark);
+  border:2px solid var(--teal);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+
+@media(max-width:640px){
+  .phase-dot{left:-36px;width:24px;height:24px}
+  .phase-dot svg{width:10px;height:10px}
+}
+
+.phase-dot svg{
+  width:12px;height:12px;
+  fill:var(--teal);
+}
+
+.phase-timing{
+  font-family:'Montserrat',sans-serif;
+  font-weight:700;
+  font-size:0.62rem;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--teal);
+  margin-bottom:6px;
+  display:block;
+}
+
+.phase h3{
+  font-family:'Montserrat',sans-serif;
+  font-weight:800;
+  font-size:1.15rem;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  color:var(--dark);
+  margin-bottom:20px;
+}
+
+.phase-items{
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.phase-items li{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  font-size:0.9rem;
+  color:rgba(10,42,40,0.7);
+  font-weight:400;
+}
+
+.phase-items li::before{
+  content:"";
+  display:block;
+  width:6px;
+  height:6px;
+  background:var(--teal);
+  flex-shrink:0;
+  margin-top:8px;
+}
+
+/* ─── SECTION 4: WHY CLINIC CATALYST ────────────────── */
+#why{
+  background-color:var(--dark);
+  background-image:var(--dot-grid);
+  background-size:32px 32px;
+  position:relative;
+  overflow:hidden;
+}
+
+#why::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(ellipse 80% 50% at 50% 50%, rgba(0,212,188,0.05) 0%, transparent 70%);
+  pointer-events:none;
+}
+
+#why .container{position:relative;z-index:1}
+
+#why .section-header h2{
+  color:var(--white);
+  font-size:clamp(1.4rem,3vw,2rem);
+  max-width:700px;
+}
+
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;
+  background:rgba(0,212,188,0.08);
+}
+
+@media(max-width:768px){
+  .why-grid{grid-template-columns:1fr}
+}
+
+.why-card{
+  background:rgba(10,42,40,0.95);
+  padding:44px 36px;
+  border-top:2px solid var(--teal);
+}
+
+.why-card h3{
+  font-family:'Montserrat',sans-serif;
+  font-weight:700;
+  font-size:0.9rem;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--white);
+  margin-bottom:16px;
+}
+
+.why-card p{
+  font-size:0.9rem;
+  color:rgba(200,240,236,0.65);
+}
+
+/* ─── SECTION 5: NEXT STEP ───────────────────────────── */
+#nextstep{background:var(--warm-bg)}
+
+.nextstep-inner{text-align:center;max-width:680px;margin:0 auto}
+
+.nextstep-inner h2{
+  font-size:clamp(1.6rem,3.5vw,2.4rem);
+  color:var(--dark);
+  margin-bottom:24px;
+}
+
+.nextstep-inner .lead{
+  font-size:1rem;
+  color:rgba(10,42,40,0.65);
+  margin-bottom:48px;
+  font-weight:300;
+}
+
+.cta-btn{
+  display:inline-block;
+  background:var(--teal);
+  color:var(--dark);
+  font-family:'Montserrat',sans-serif;
+  font-weight:800;
+  font-size:0.78rem;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  text-decoration:none;
+  padding:18px 44px;
+  transition:background 0.2s ease, transform 0.15s ease;
+}
+
+.cta-btn:hover{
+  background:var(--teal-mid);
+  transform:translateY(-1px);
+}
+
+.cta-attribution{
+  margin-top:40px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+}
+
+.cta-names{
+  font-family:'Montserrat',sans-serif;
+  font-weight:600;
+  font-size:0.85rem;
+  letter-spacing:0.06em;
+  color:var(--dark);
+}
+
+.cta-brand{
+  font-family:'Montserrat',sans-serif;
+  font-weight:700;
+  font-size:0.68rem;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--teal);
+}
+
+/* ─── FOOTER ─────────────────────────────────────────── */
+footer{
+  background:var(--dark);
+  padding:28px 40px;
+  text-align:center;
+}
+
+footer p{
+  font-family:'Montserrat',sans-serif;
+  font-weight:400;
+  font-size:0.68rem;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:rgba(200,240,236,0.3);
+}
+
+/* ─── TRANSITIONS & ACCESSIBILITY ───────────────────── */
+@media(prefers-reduced-motion:reduce){
+  *{transition:none!important}
+}
+
+:focus-visible{
+  outline:2px solid var(--teal);
+  outline-offset:3px;
+}
+</style>
+</head>
+<body>
+
+<!-- ─── SECTION 1: COVER ─────────────────────────────── -->
+<section id="cover" class="section" aria-label="Cover">
+  <div class="cover-inner">
+    <div class="cc-badge">Clinic Catalyst</div>
+    <h1 class="cover-clinic">Infinity Skin Care Clinic</h1>
+    <p class="cover-sub">Growth Roadmap</p>
+    <div class="cover-divider"></div>
+    <div class="cover-meta">
+      <span class="cover-prepared">Prepared for Rav</span>
+      <span class="cover-date">May 2026</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SECTION 2: WHERE YOU ARE NOW ─────────────────── -->
+<section id="opportunity" class="section" aria-label="The Opportunity">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">The Opportunity</span>
+      <h2>You have incredible results.<br>Your website isn't showing them.</h2>
+    </div>
+    <div class="cards-grid" role="list">
+
+      <article class="insight-card" role="listitem">
+        <span class="insight-number" aria-hidden="true">01</span>
+        <h3>Your B&amp;A photos are buried</h3>
+        <p>Your before and after results are stunning - but they're hidden in a carousel halfway down the page. Most visitors never see them.</p>
+      </article>
+
+      <article class="insight-card" role="listitem">
+        <span class="insight-number" aria-hidden="true">02</span>
+        <h3>Every non-ready visitor is lost</h3>
+        <p>Your only CTA is 'Book Appointment'. Anyone who isn't ready today has no way to stay connected with you.</p>
+      </article>
+
+      <article class="insight-card" role="listitem">
+        <span class="insight-number" aria-hidden="true">03</span>
+        <h3>Google can't read your site</h3>
+        <p>Your heading structure is broken at a technical level. Search engines are struggling to index your content properly.</p>
+      </article>
+
+      <article class="insight-card" role="listitem">
+        <span class="insight-number" aria-hidden="true">04</span>
+        <h3>Your team is answering phones instead of treating</h3>
+        <p>Every call your team answers manually is time away from clients. After-hours calls go completely unanswered.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── SECTION 3: WHERE WE TAKE YOU ─────────────────── -->
+<section id="plan" class="section" aria-label="The Plan">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">The Plan</span>
+      <h2>Four phases. Visible results at every stage.</h2>
+    </div>
+
+    <div class="phases-container" role="list">
+
+      <article class="phase" role="listitem">
+        <div class="phase-dot" aria-hidden="true">
+          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="6" r="4"/></svg>
+        </div>
+        <span class="phase-timing">Week 1</span>
+        <h3>Phase 1  -  Instant Wins</h3>
+        <ul class="phase-items">
+          <li>Problem-focused landing pages with your B&A results front and centre</li>
+          <li>Skin concern assessment that captures leads 24/7</li>
+          <li>Free consultation offer replacing generic booking</li>
+          <li>Google reviews displayed where they build instant trust</li>
+        </ul>
+      </article>
+
+      <article class="phase" role="listitem">
+        <div class="phase-dot" aria-hidden="true">
+          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="6" r="4"/></svg>
+        </div>
+        <span class="phase-timing">Weeks 2 – 3</span>
+        <h3>Phase 2  -  Conversion System</h3>
+        <ul class="phase-items">
+          <li>Full website rebuild around 3 client concern pathways</li>
+          <li>Individual treatment pages optimised for local search</li>
+          <li>AI search visibility so ChatGPT and Perplexity recommend you</li>
+          <li>Automated review collection after every appointment</li>
+        </ul>
+      </article>
+
+      <article class="phase" role="listitem">
+        <div class="phase-dot" aria-hidden="true">
+          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="6" r="4"/></svg>
+        </div>
+        <span class="phase-timing">Weeks 3 – 4</span>
+        <h3>Phase 3  -  Aria Voice Agent</h3>
+        <ul class="phase-items">
+          <li>Every call answered - even when your team is with clients</li>
+          <li>After-hours bookings captured automatically</li>
+          <li>Appointment confirmations and reminders</li>
+          <li>Your team freed to focus on treatments, not phones</li>
+        </ul>
+      </article>
+
+      <article class="phase" role="listitem">
+        <div class="phase-dot" aria-hidden="true">
+          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="6" r="4"/></svg>
+        </div>
+        <span class="phase-timing">Month 2+</span>
+        <h3>Phase 4  -  Paid Growth</h3>
+        <ul class="phase-items">
+          <li>Targeted ads across the Kalkallo-Craigieburn corridor</li>
+          <li>Your real B&A photos as ad creative</li>
+          <li>Retargeting visitors who showed interest but didn't book</li>
+          <li>Low competition in your area means stronger returns</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── SECTION 4: WHY CLINIC CATALYST ───────────────── -->
+<section id="why" class="section" aria-label="Why Clinic Catalyst">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">Why Us</span>
+      <h2>This isn't an agency.<br>This is a growth partner.</h2>
+    </div>
+
+    <div class="why-grid" role="list">
+
+      <article class="why-card" role="listitem">
+        <h3>We don't just run ads</h3>
+        <p>We build the entire system - from the moment someone searches for help with their skin, to the moment they walk through your door.</p>
+      </article>
+
+      <article class="why-card" role="listitem">
+        <h3>Built for clinics</h3>
+        <p>Every tool, every page, every automation is designed specifically for appointment-based businesses. Not retail. Not e-commerce. Clinics.</p>
+      </article>
+
+      <article class="why-card" role="listitem">
+        <h3>Real results, real proof</h3>
+        <p>We show you exactly what's working, what's converting, and where your next clients are coming from. No vanity metrics.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── SECTION 5: NEXT STEP ──────────────────────────── -->
+<section id="nextstep" class="section" aria-label="Next Step">
+  <div class="container">
+    <div class="nextstep-inner">
+      <span class="label" style="margin-bottom:20px">Your Move</span>
+      <h2>Let's talk about your clinic.</h2>
+      <p class="lead">Everything you've seen in this demo package was built specifically for Infinity Skin Care Clinic. Let's walk through it together and map out exactly how we'd fill your chairs.</p>
+      <a
+        href="https://bookings.gettimely.com/infinityskincareclinic"
+        class="cta-btn"
+        aria-label="Book your strategy call with Clinic Catalyst"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Book Your Strategy Call</a>
+      <div class="cta-attribution">
+        <span class="cta-names">Kelly Wotherspoon + Alicia Hagen</span>
+        <span class="cta-brand">Clinic Catalyst</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─────────────────────────────────────────── -->
+<footer role="contentinfo">
+  <p>&copy; 2026 Clinic Catalyst. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infinity Skin Care Clinic Kalkallo | Real Skin Transformations in Melbourne's North</title>
+<meta name="description" content="Struggling with skin texture, signs of aging, or hair thinning? See real before and after results from Infinity Skin Care Clinic in Kalkallo. Free consultations available.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Judson:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#C5963A;--gold-light:#DFBD6D;--gold-dark:#A67C2E;--gold-glow:rgba(197,150,58,.15);
+  --cream:#FAF6F0;--cream-soft:#F3EDE4;--cream-deep:#E4D9C8;
+  --charcoal:#1F2124;--charcoal-light:#33373D;--charcoal-mid:#3F444B;
+  --text:#383838;--text-light:#7A7268;--white:#FFFFFF;
+  --radius:10px;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--cream);color:var(--text);font-family:'Open Sans',sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;position:relative}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+/* ── TEXTURE OVERLAY ── */
+body::before{
+  content:"";position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;
+  opacity:.4;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  background-size:200px 200px;
+}
+body::after{
+  content:"";position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 10%, rgba(197,150,58,.06) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 85% 90%, rgba(197,150,58,.05) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 50% at 50% 50%, rgba(228,217,200,.08) 0%, transparent 70%);
+}
+body>*{position:relative;z-index:1}
+
+/* ── ANNOUNCEMENT ── */
+.announce{background:linear-gradient(135deg,var(--gold-dark),var(--gold),var(--gold-light));color:var(--white);text-align:center;padding:11px 20px;font-size:.82rem;font-weight:500;letter-spacing:.02em;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.announce a{color:var(--white);text-decoration:underline;font-weight:700}
+
+/* ── NAV ── */
+.nav-wrap{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--cream-deep);position:sticky;top:0;z-index:100}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 5%;max-width:1200px;margin:0 auto}
+.nav-logo img{height:44px;width:auto}
+.nav-right{display:flex;align-items:center;gap:24px}
+.nav-phone{font-size:.85rem;color:var(--text-light);font-weight:500;display:flex;align-items:center;gap:6px}
+.nav-phone svg{width:16px;height:16px;color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--white);padding:12px 28px;border-radius:50px;font-size:.82rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;transition:all .3s;border:none;cursor:pointer}
+.nav-cta:hover{background:var(--gold-dark);transform:translateY(-1px);box-shadow:0 4px 16px rgba(197,150,58,.35)}
+
+/* ── HERO ── */
+.hero{max-width:1200px;margin:0 auto;padding:48px 5% 60px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.hero-text h1{font-family:'Judson',serif;font-size:clamp(2rem,4vw,3rem);line-height:1.2;color:var(--charcoal);margin-bottom:20px;font-weight:700}
+.hero-text h1 span{color:var(--gold);font-style:italic;font-family:'Lora',serif;font-weight:400}
+.hero-tag{display:inline-block;background:var(--cream-soft);color:var(--gold-dark);font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:6px 16px;border-radius:50px;margin-bottom:16px;border:1px solid var(--cream-deep)}
+.hero-sub{font-size:1rem;color:var(--text-light);line-height:1.75;margin-bottom:28px;max-width:460px}
+.hero-cta-wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:var(--white);padding:16px 32px;border-radius:50px;font-size:.9rem;font-weight:600;letter-spacing:.02em;transition:all .3s;border:none;cursor:pointer;text-decoration:none;box-shadow:0 2px 8px rgba(197,150,58,.2)}
+.btn-primary:hover{background:linear-gradient(135deg,var(--gold-light),var(--gold));transform:translateY(-2px);box-shadow:0 8px 28px rgba(197,150,58,.3)}
+.btn-primary svg{width:18px;height:18px;transition:transform .3s}
+.btn-primary:hover svg{transform:translateX(3px)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--gold);padding:16px 28px;border-radius:50px;font-size:.9rem;font-weight:600;border:2px solid var(--gold);transition:all .3s;cursor:pointer;text-decoration:none}
+.btn-outline:hover{background:var(--gold);color:var(--white)}
+.hero-proof{margin-top:24px;display:flex;align-items:center;gap:10px}
+.hero-stars{color:var(--gold);font-size:1.1rem;letter-spacing:2px}
+.hero-proof-text{font-size:.82rem;color:var(--text-light)}
+
+/* ── HERO B&A ── */
+.hero-ba{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:0 20px 60px rgba(31,33,36,.12);border:2px solid var(--cream-deep)}
+.hero-ba::before{content:"";position:absolute;inset:-2px;border-radius:var(--radius);background:linear-gradient(135deg,var(--gold-light),transparent 40%,transparent 60%,var(--gold));z-index:1;opacity:.4;pointer-events:none;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:xor;-webkit-mask-composite:xor;padding:2px}
+.hero-ba img{width:100%;height:auto;display:block}
+.ba-badge{position:absolute;top:16px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--white);padding:6px 20px;border-radius:50px;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+
+/* ── DIVIDER ── */
+.divider{max-width:1200px;margin:0 auto;padding:0 5%}
+.divider-line{height:1px;background:linear-gradient(90deg,transparent 5%,var(--cream-deep) 20%,var(--gold) 50%,var(--cream-deep) 80%,transparent 95%)}
+
+/* ── PROBLEMS SECTION ── */
+.problems{padding:72px 5% 80px;max-width:1200px;margin:0 auto}
+.section-tag{display:block;color:var(--gold);font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-align:center;margin-bottom:12px}
+.section-head{font-family:'Judson',serif;font-size:clamp(1.6rem,3vw,2.4rem);text-align:center;color:var(--charcoal);margin-bottom:12px;font-weight:700;line-height:1.25}
+.section-sub{text-align:center;color:var(--text-light);max-width:540px;margin:0 auto 52px;font-size:.95rem;line-height:1.7}
+
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.problem-card{background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid var(--cream-deep);transition:all .4s;cursor:pointer;position:relative;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.problem-card:hover{border-color:var(--gold-light);transform:translateY(-6px);box-shadow:0 16px 48px rgba(197,150,58,.15)}
+
+.problem-ba{position:relative;overflow:hidden}
+.problem-ba img{width:100%;height:auto;display:block;transition:transform .6s}
+.problem-card:hover .problem-ba img{transform:scale(1.02)}
+.problem-ba-overlay{position:absolute;bottom:0;left:0;right:0;height:60px;background:linear-gradient(transparent,rgba(31,33,36,.4))}
+
+.problem-body{padding:24px 22px 28px}
+.problem-name{font-family:'Judson',serif;font-size:1.2rem;color:var(--charcoal);margin-bottom:10px;line-height:1.3;font-weight:700}
+.problem-feel{font-size:.88rem;color:var(--text-light);line-height:1.65;margin-bottom:18px}
+.problem-cta{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:.85rem;font-weight:600;letter-spacing:.02em;transition:gap .3s}
+.problem-card:hover .problem-cta{gap:14px}
+
+/* ── RESULTS GALLERY ── */
+.gallery{padding:0 5% 72px;max-width:1200px;margin:0 auto}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gallery-grid img{width:100%;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.06);transition:transform .3s}
+.gallery-grid img:hover{transform:scale(1.03)}
+
+/* ── STATS STRIP ── */
+.stats{background:var(--charcoal);padding:48px 5%;position:relative;overflow:hidden}
+.stats::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");background-size:200px 200px}
+.stats::after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(197,150,58,.08) 0%,transparent 40%,transparent 60%,rgba(197,150,58,.05) 100%)}
+.stats-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;text-align:center;position:relative;z-index:1}
+.stat-num{font-family:'Judson',serif;font-size:2.6rem;color:var(--gold);margin-bottom:4px}
+.stat-label{font-size:.85rem;color:rgba(255,255,255,.6);letter-spacing:.02em}
+
+/* ── HOW IT WORKS ── */
+.process{padding:72px 5%;max-width:1200px;margin:0 auto}
+.process-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:48px}
+.process-img{border-radius:var(--radius);overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.08)}
+.process-img img{width:100%;height:auto}
+.process-steps{list-style:none}
+.process-step{display:flex;gap:18px;margin-bottom:28px;align-items:flex-start}
+.step-num{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:var(--white);font-family:'Judson',serif;font-size:1.1rem;font-weight:700;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(197,150,58,.25)}
+.step-content h4{font-family:'Judson',serif;font-size:1.05rem;color:var(--charcoal);margin-bottom:4px;font-weight:700}
+.step-content p{font-size:.88rem;color:var(--text-light);line-height:1.6}
+
+/* ── RAV / TRUST ── */
+.trust{padding:72px 5%;background:var(--cream-soft);position:relative;overflow:hidden}
+.trust::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;opacity:.25;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");background-size:180px 180px}
+.trust::after{content:"";position:absolute;top:0;right:0;width:40%;height:100%;background:radial-gradient(ellipse at 80% 30%,rgba(197,150,58,.06),transparent 70%)}
+.trust-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:280px 1fr;gap:48px;align-items:center;position:relative;z-index:1}
+.trust-photo{border-radius:var(--radius);overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.08)}
+.trust-photo img{width:100%;height:auto;object-fit:cover}
+.trust-text h3{font-family:'Judson',serif;font-size:1.6rem;color:var(--charcoal);margin-bottom:12px;font-weight:700}
+.trust-text p{font-size:.92rem;color:var(--text-light);line-height:1.75;margin-bottom:12px}
+.trust-text .credential{display:inline-flex;align-items:center;gap:8px;background:var(--white);padding:8px 16px;border-radius:50px;font-size:.8rem;color:var(--gold-dark);font-weight:600;border:1px solid var(--gold-light);margin-top:8px;margin-right:8px;box-shadow:0 1px 4px rgba(197,150,58,.1)}
+
+/* ── FINAL CTA ── */
+.final-cta{padding:80px 5%;text-align:center;background:linear-gradient(180deg,var(--cream) 0%,var(--cream-soft) 100%);position:relative;overflow:hidden}
+.final-cta::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(197,150,58,.06) 0%,transparent 70%);pointer-events:none}
+.final-cta h2{font-family:'Judson',serif;font-size:clamp(1.7rem,3.5vw,2.6rem);color:var(--charcoal);margin-bottom:14px;font-weight:700;line-height:1.25}
+.final-cta h2 span{color:var(--gold);font-family:'Lora',serif;font-style:italic;font-weight:400}
+.final-cta>p{color:var(--text-light);font-size:.95rem;margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7}
+.final-note{margin-top:16px;font-size:.82rem;color:var(--text-light)}
+.final-note a{color:var(--gold);font-weight:600}
+
+/* ── FOOTER ── */
+.footer{background:var(--charcoal);color:rgba(255,255,255,.5);padding:36px 5%}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-brand{display:flex;align-items:center;gap:12px}
+.footer-brand img{height:32px;width:auto;filter:brightness(0) invert(1);opacity:.7}
+.footer-links{display:flex;gap:24px}
+.footer-links a{font-size:.8rem;color:rgba(255,255,255,.5);transition:color .3s}
+.footer-links a:hover{color:var(--gold-light)}
+.footer-copy{font-size:.75rem;width:100%;text-align:center;margin-top:12px;color:rgba(255,255,255,.3)}
+
+/* ── MOBILE ── */
+@media(max-width:968px){
+  .hero{grid-template-columns:1fr;gap:36px;padding:36px 5% 48px}
+  .hero-ba{max-width:560px;margin:0 auto}
+  .problem-grid{grid-template-columns:1fr}
+  .problem-card{max-width:520px;margin:0 auto;width:100%}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-inner{grid-template-columns:1fr;gap:20px}
+  .process-grid{grid-template-columns:1fr;gap:36px}
+  .trust-inner{grid-template-columns:1fr;text-align:center}
+  .trust-photo{max-width:280px;margin:0 auto}
+  .footer-inner{justify-content:center;text-align:center}
+  .nav-phone{display:none}
+}
+@media(max-width:600px){
+  .hero h1{font-size:1.8rem}
+  .hero-cta-wrap{flex-direction:column;align-items:flex-start}
+  .btn-primary,.btn-outline{width:100%;justify-content:center}
+  .gallery-grid{grid-template-columns:1fr 1fr;gap:10px}
+}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce">
+  First-time client? <strong>Get 10% off your first treatment</strong> at Infinity Skin Care Clinic - <a href="https://bookings.gettimely.com/infinityskincareclinic">Book your consultation</a>
+</div>
+
+<!-- NAV -->
+<div class="nav-wrap">
+  <nav class="nav">
+    <a href="https://infinityskincareclinic.com.au" class="nav-logo">
+      <img src="https://infinityskincareclinic.com.au/wp-content/uploads/2025/03/main-logo.png" alt="Infinity Skin Care Clinic">
+    </a>
+    <div class="nav-right">
+      <a href="tel:0381890785" class="nav-phone">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        (03) 8189 0785
+      </a>
+      <a href="https://bookings.gettimely.com/infinityskincareclinic" class="nav-cta">Skin Assessment</a>
+    </div>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <span class="hero-tag">Kalkallo's Skin Transformation Clinic</span>
+    <h1>Your skin is telling you something. <span>We know how to listen.</span></h1>
+    <p class="hero-sub">You've tried the creams. You've scrolled the routines. But your skin still isn't where you want it to be. At Infinity, we don't guess - we assess, we plan, and we deliver results you can actually see.</p>
+    <div class="hero-cta-wrap">
+      <a href="https://bookings.gettimely.com/infinityskincareclinic" class="btn-primary">
+        Book Your Free Skin Consultation
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+      </a>
+      <a href="tel:0381890785" class="btn-outline">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        Call Us
+      </a>
+    </div>
+    <div class="hero-proof">
+      <span class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span class="hero-proof-text">Trusted by hundreds of clients across Melbourne's north</span>
+    </div>
+  </div>
+  <div class="hero-ba">
+    <img src="https://infinityskincareclinic.com.au/wp-content/uploads/2025/02/Results-1.jpg" alt="Before and after jawline skin tightening treatment at Infinity Skin Care Clinic Kalkallo">
+    <span class="ba-badge">Real Client Result</span>
+  </div>
+</section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<!-- THREE PROBLEMS -->
+<section class="problems" id="concerns">
+  <span class="section-tag">What's bothering you?</span>
+  <h2 class="section-head">Pick the concern that keeps you up at night</h2>
+  <p class="section-sub">Forget treatment names. Just tell us what's frustrating you - we'll build the plan to fix it.</p>
+
+  <div class="problem-grid">
+
+    <!-- PROBLEM 1: Skin texture / acne / scarring -->
+    <a href="https://bookings.gettimely.com/infinityskincareclinic" class="problem-card">
+      <div class="problem-ba">
+        <img src="https://infinityskincareclinic.com.au/wp-content/uploads/2025/02/Results-5.jpg" alt="Before and after acne and skin texture treatment showing dramatic clearing of redness and breakouts">
+        <div class="problem-ba-overlay"></div>
+      </div>
+      <div class="problem-body">
+        <h3 class="problem-name">My skin looks dull, scarred, or keeps breaking out</h3>
+        <p class="problem-feel">You catch yourself avoiding natural light. Foundation only goes so far. Acne, pigmentation, rough texture - your skin feels like it's working against you no matter what you try.</p>
+        <span class="problem-cta">Get your personalised skin plan <span>&rarr;</span></span>
+      </div>
+    </a>
+
+    <!-- PROBLEM 2: Aging / tightening / jawline -->
+    <a href="https://bookings.gettimely.com/infinityskincareclinic" class="problem-card">
+      <div class="problem-ba">
+        <img src="https://infinityskincareclinic.com.au/wp-content/uploads/2025/02/Results-1.jpg" alt="Before and after jawline tightening and skin firming treatment showing visible lift and definition">
+        <div class="problem-ba-overlay"></div>
+      </div>
+      <div class="problem-body">
+        <h3 class="problem-name">My face is losing its shape and firmness</h3>
+        <p class="problem-feel">You looked in the mirror one day and didn't recognise yourself. Fine lines crept in. Your jawline softened. You're not vain - you just want to look as young as you feel.</p>
+        <span class="problem-cta">Get your personalised skin plan <span>&rarr;</span></span>
+      </div>
+    </a>
+
+    <!-- PROBLEM 3: Hair thinning / loss -->
+    <a href="https://bookings.gettimely.com/infinityskincareclinic" class="problem-card">
+      <div class="problem-ba">
+        <img src="https://infinityskincareclinic.com.au/wp-content/uploads/2025/02/Results-4.jpg" alt="Before and after hair restoration treatment showing significant regrowth and increased density">
+        <div class="problem-ba-overlay"></div>
+      </div>
+      <div class="problem-body">
+        <h3 class="problem-name">My hair is thinning and I can see my scalp</h3>
+        <p class="problem-feel">You've noticed the part getting wider. The ponytail getting thinner. You restyle to cover it but the anxiety stays. Hair loss affects everything - confidence, mood, how you show up in the world.</p>
+        <span class="problem-cta">Get your personalised skin plan <span>&rarr;</span></span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- MORE RESULTS GALLERY -->
+<section class="gallery">
+  <span class="section-tag">More real results</span>
+  <h2 class="section-head" style="margin-bottom:32px">Every photo is a real Infinity client</h2>
+  <div class="gallery-grid">
+    <img src="https://infinityskincareclinic.com.au/wp-content/uploads/2025/02/Results-3.jpg" alt="Skin texture improvement - before and after pore refinement treatment">
+    <img src="https://infinityskincareclinic.com.au/wp-content/uploads/2025/02/Results-2.jpg" alt="Hair regrowth treatment - before and after PRP therapy for hair loss">
+    <img src="https://infinityskincareclinic.com.au/wp-content/uploads/2025/02/Results-7.jpg" alt="Forehead skin clarity improvement - before and after pigmentation treatment">
+    <img src="https://infinityskincareclinic.com.au/wp-content/uploads/2025/02/Results-6.jpg" alt="Hair restoration - before and after showing significant hair regrowth">
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div>
+      <div class="stat-num">2+ Years</div>
+      <div class="stat-label">Delivering visible results in Kalkallo</div>
+    </div>
+    <div>
+      <div class="stat-num">10+</div>
+      <div class="stat-label">Specialised skin and hair treatments</div>
+    </div>
+    <div>
+      <div class="stat-num">5</div>
+      <div class="stat-label">Qualified specialists on your team</div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="process">
+  <span class="section-tag">How it works</span>
+  <h2 class="section-head">We don't sell you treatments. We solve the problem.</h2>
+  <div class="process-grid">
+    <div class="process-img">
+      <img src="https://infinityskincareclinic.com.au/wp-content/uploads/2025/02/infinity-skincare-1024x1024.jpg" alt="Infinity Skin Care Clinic reception and waiting area in Kalkallo">
+    </div>
+    <ol class="process-steps">
+      <li class="process-step">
+        <span class="step-num">1</span>
+        <div class="step-content">
+          <h4>Free Skin Consultation</h4>
+          <p>Tell us what's bothering you. We assess your skin under clinical lighting, discuss your history, and listen - properly listen - to what you want to change.</p>
+        </div>
+      </li>
+      <li class="process-step">
+        <span class="step-num">2</span>
+        <div class="step-content">
+          <h4>Your Personalised Plan</h4>
+          <p>No cookie-cutter packages. We map a treatment plan around your specific concern, your skin type, your budget, and your life. Honest timelines, no overselling.</p>
+        </div>
+      </li>
+      <li class="process-step">
+        <span class="step-num">3</span>
+        <div class="step-content">
+          <h4>Visible, Trackable Results</h4>
+          <p>We photograph progress at every session so you can see the change - not just feel it. Your results are the proof, and we stand behind every one.</p>
+        </div>
+      </li>
+      <li class="process-step">
+        <span class="step-num">4</span>
+        <div class="step-content">
+          <h4>Ongoing Support</h4>
+          <p>We check in between sessions, adjust your plan as your skin responds, and make sure you're getting the outcome you came for. This isn't a one-and-done.</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- RAV / TRUST -->
+<section class="trust">
+  <div class="trust-inner">
+    <div class="trust-photo">
+      <img src="https://infinityskincareclinic.com.au/wp-content/uploads/2025/03/Rav.jpg" alt="Rav - Cosmetic Nurse and founder of Infinity Skin Care Clinic Kalkallo">
+    </div>
+    <div class="trust-text">
+      <span class="section-tag" style="text-align:left;margin-bottom:8px">Meet your skin specialist</span>
+      <h3>You're in Rav's hands - and she's been doing this for years</h3>
+      <p>Rav founded Infinity Skin Care Clinic because she believed every person in Melbourne's north deserved access to real, clinical-grade skin treatments - without the city price tag or the attitude.</p>
+      <p>Her approach is simple: listen first, treat second. Every plan she writes is built around what's actually going on with your skin, not what's trending on Instagram.</p>
+      <div>
+        <span class="credential">Qualified Cosmetic Nurse</span>
+        <span class="credential">Advanced Laser Certified</span>
+        <span class="credential">PRP Specialist</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="book">
+  <span class="section-tag">Ready to see what's possible?</span>
+  <h2>Your skin transformation starts with <span>one conversation</span></h2>
+  <p>No commitment. No pressure. Just an honest assessment of what's going on and a clear plan to fix it. Free for first-time clients at Infinity Skin Care Clinic, Kalkallo.</p>
+  <a href="https://bookings.gettimely.com/infinityskincareclinic" class="btn-primary" style="font-size:.95rem;padding:18px 40px">
+    Book Your Free Skin Consultation
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+  </a>
+  <p class="final-note">
+    <a href="https://maps.app.goo.gl/RkgZaFJLV1NvsTjV7">Shop 12/44 Toyon Road, Kalkallo Town Centre VIC 3064</a>
+    &nbsp;&bull;&nbsp; <a href="tel:0381890785">(03) 8189 0785</a>
+    &nbsp;&bull;&nbsp; <a href="mailto:info@infinityskincareclinic.com.au">info@infinityskincareclinic.com.au</a>
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="https://infinityskincareclinic.com.au/wp-content/uploads/2025/03/main-logo.png" alt="Infinity Skin Care Clinic">
+    </div>
+    <div class="footer-links">
+      <a href="https://infinityskincareclinic.com.au/privacy-policy/">Privacy Policy</a>
+      <a href="https://infinityskincareclinic.com.au/refund-policy/">Refund Policy</a>
+      <a href="https://www.instagram.com/infinityskincareclinic/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/infinityskincareclinc" target="_blank" rel="noopener">Facebook</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 Infinity Skin Care Clinic. All rights reserved. | Kalkallo Skin Clinic serving Mickleham, Donnybrook, Craigieburn &amp; Melbourne's north.</div>
+  </div>
+</footer>
+
+</body>
+</html>
