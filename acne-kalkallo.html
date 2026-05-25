@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Acne Treatment Kalkallo - Infinity Skin Care Clinic</title>
+<link href="https://fonts.googleapis.com/css2?family=Judson:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C5963A;
+  --gold-light: #DFBD6D;
+  --gold-dark: #A67C2E;
+  --gold-glow: rgba(197,150,58,0.18);
+  --cream: #FAF6F0;
+  --cream-soft: #F3EDE4;
+  --cream-deep: #E4D9C8;
+  --charcoal: #1F2124;
+  --charcoal-light: #2C3035;
+  --text: #383838;
+  --text-muted: #7A7268;
+  --white: #FFFFFF;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Open Sans',sans-serif; color:var(--text); background:var(--cream); line-height:1.6; }
+
+/* NAV */
+nav { display:flex; align-items:center; justify-content:space-between; padding:1.2rem 3rem; background:var(--white); border-bottom:1px solid var(--cream-deep); }
+.nav-logo { font-family:'Judson',serif; font-weight:700; font-size:1.3rem; color:var(--charcoal); }
+.nav-logo span { color:var(--gold); }
+.nav-links { display:flex; gap:2rem; list-style:none; }
+.nav-links a { text-decoration:none; font-size:0.8rem; color:var(--text-muted); font-weight:500; }
+.nav-cta { background:var(--gold); color:var(--white); padding:0.6rem 1.4rem; border-radius:6px; font-family:'Open Sans',sans-serif; font-size:0.72rem; font-weight:700; text-decoration:none; text-transform:uppercase; letter-spacing:0.06em; }
+
+/* HERO */
+.hero { display:grid; grid-template-columns:1fr 1fr; min-height:70vh; }
+.hero-text { padding:5rem 4rem; display:flex; flex-direction:column; justify-content:center; background:var(--cream-soft); }
+.hero-text .location-badge { display:inline-block; background:var(--gold); color:white; font-family:'Open Sans',sans-serif; font-size:0.6rem; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; padding:0.3rem 0.8rem; border-radius:3px; margin-bottom:1.2rem; width:fit-content; }
+.hero-text h1 { font-family:'Judson',serif; font-size:2.6rem; font-weight:700; line-height:1.15; color:var(--charcoal); margin-bottom:1rem; }
+.hero-text h1 span { color:var(--gold); }
+.hero-text p { font-size:0.95rem; color:var(--text-muted); line-height:1.8; max-width:480px; margin-bottom:2rem; }
+.btn-primary { background:var(--gold); color:white; padding:0.85rem 2rem; border-radius:6px; font-size:0.75rem; font-weight:700; text-decoration:none; text-transform:uppercase; letter-spacing:0.06em; display:inline-block; }
+.btn-secondary { color:var(--gold); font-size:0.75rem; font-weight:700; text-decoration:none; margin-left:1.5rem; }
+.hero-image { position:relative; overflow:hidden; }
+.hero-image img { width:100%; height:100%; object-fit:cover; }
+
+/* TRUST BAR */
+.trust-bar { display:flex; align-items:center; justify-content:center; gap:3rem; padding:1.5rem 3rem; background:var(--charcoal); }
+.trust-item { display:flex; align-items:center; gap:0.5rem; }
+.trust-number { font-family:'Judson',serif; font-size:1.2rem; font-weight:700; color:var(--gold); }
+.trust-label { font-size:0.7rem; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.08em; }
+
+/* CONCERNS */
+.concerns { padding:5rem 4rem; text-align:center; background:var(--white); }
+.concerns .label { font-size:0.6rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:0.8rem; }
+.concerns h2 { font-family:'Judson',serif; font-size:1.8rem; font-weight:700; color:var(--charcoal); margin-bottom:0.8rem; }
+.concerns .subtitle { font-size:0.9rem; color:var(--text-muted); max-width:600px; margin:0 auto 3rem; }
+.concern-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; max-width:900px; margin:0 auto; }
+.concern-card { background:var(--cream-soft); border-radius:10px; padding:2rem 1.5rem; text-align:center; border:1px solid var(--cream-deep); }
+.concern-card h3 { font-family:'Judson',serif; font-size:1rem; font-weight:700; color:var(--charcoal); margin-bottom:0.5rem; }
+.concern-card p { font-size:0.78rem; color:var(--text-muted); line-height:1.6; }
+
+/* RESULTS */
+.results { padding:5rem 4rem; background:var(--cream-soft); }
+.results .label { font-size:0.6rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:0.8rem; text-align:center; }
+.results h2 { font-family:'Judson',serif; font-size:1.8rem; font-weight:700; color:var(--charcoal); text-align:center; margin-bottom:3rem; }
+.results-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; max-width:1000px; margin:0 auto; }
+.result-card { background:white; border-radius:10px; overflow:hidden; box-shadow:0 2px 15px rgba(0,0,0,0.04); border:1px solid var(--cream-deep); }
+.result-img { height:200px; overflow:hidden; }
+.result-img img { width:100%; height:100%; object-fit:cover; }
+.result-card .result-body { padding:1.2rem; }
+.result-card h4 { font-family:'Judson',serif; font-size:0.9rem; font-weight:700; color:var(--charcoal); margin-bottom:0.3rem; }
+.result-card p { font-size:0.75rem; color:var(--text-muted); line-height:1.5; }
+
+/* CTA */
+.cta-section { padding:5rem 4rem; text-align:center; background:var(--charcoal); }
+.cta-section h2 { font-family:'Judson',serif; font-size:1.8rem; font-weight:700; color:white; margin-bottom:1rem; }
+.cta-section h2 span { color:var(--gold); }
+.cta-section p { font-size:0.9rem; color:rgba(255,255,255,0.6); max-width:500px; margin:0 auto 2rem; line-height:1.8; }
+
+/* FOOTER */
+footer { padding:2rem 4rem; text-align:center; font-size:0.7rem; color:var(--text-muted); background:var(--cream); border-top:1px solid var(--cream-deep); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Infinity <span>Skin Care</span></div>
+  <ul class="nav-links">
+    <li><a href="#">Treatments</a></li>
+    <li><a href="#">Results</a></li>
+    <li><a href="#">About Rita</a></li>
+    <li><a href="#">Reviews</a></li>
+  </ul>
+  <a href="#" class="nav-cta">Free Skin Assessment</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <span class="location-badge">Kalkallo &middot; Craigieburn &middot; Northern Corridor</span>
+    <h1>Acne Treatment That <span>Actually Works</span></h1>
+    <p>Stop covering up. Start clearing up. Rita has helped hundreds of clients in the Kalkallo-Craigieburn area achieve clear, confident skin with proven clinical treatments - not just products.</p>
+    <div>
+      <a href="#" class="btn-primary">Book Free Skin Assessment</a>
+      <a href="#" class="btn-secondary">See Real Results &#8595;</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="../assets/results-3.jpg" alt="Acne treatment before and after result">
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="trust-item"><span class="trust-number">4.7</span><span class="trust-label">Google Rating</span></div>
+  <div class="trust-item"><span class="trust-number">98</span><span class="trust-label">5-Star Reviews</span></div>
+  <div class="trust-item"><span class="trust-number">5+</span><span class="trust-label">Years Experience</span></div>
+  <div class="trust-item"><span class="trust-number">Kalkallo</span><span class="trust-label">Local Clinic</span></div>
+</div>
+
+<section class="concerns">
+  <p class="label">We Treat</p>
+  <h2>Your Specific Skin Concern</h2>
+  <p class="subtitle">Every treatment plan is customised to your skin type, concern severity, and goals.</p>
+  <div class="concern-grid">
+    <div class="concern-card">
+      <h3>Active Acne</h3>
+      <p>Persistent breakouts, hormonal acne, cystic acne. Clinical treatments that target the root cause.</p>
+    </div>
+    <div class="concern-card">
+      <h3>Acne Scarring</h3>
+      <p>Ice pick scars, rolling scars, post-inflammatory marks. Resurfacing treatments that rebuild skin texture.</p>
+    </div>
+    <div class="concern-card">
+      <h3>Post-Acne Pigmentation</h3>
+      <p>Dark spots, uneven tone, redness. Targeted treatments to restore clear, even skin.</p>
+    </div>
+  </div>
+</section>
+
+<section class="results">
+  <p class="label">Real Clients, Real Results</p>
+  <h2>Transformations From Our Kalkallo Clinic</h2>
+  <div class="results-grid">
+    <div class="result-card">
+      <div class="result-img"><img src="../assets/results-1.jpg" alt="Result"></div>
+      <div class="result-body">
+        <h4>Skin Transformation</h4>
+        <p>Real results from our Kalkallo clinic. Every treatment plan customised to the individual.</p>
+      </div>
+    </div>
+    <div class="result-card">
+      <div class="result-img"><img src="../assets/results-3.jpg" alt="Result"></div>
+      <div class="result-body">
+        <h4>Visible Improvement</h4>
+        <p>Clinical treatments that target the root cause - not just the symptoms.</p>
+      </div>
+    </div>
+    <div class="result-card">
+      <div class="result-img"><img src="../assets/results-5.jpg" alt="Result"></div>
+      <div class="result-body">
+        <h4>Confidence Restored</h4>
+        <p>The transformation you can see is only half the story. It's how they feel that matters.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Ready to Start Your <span>Skin Transformation?</span></h2>
+  <p>Book a free 15-minute skin assessment. No obligation, no pressure - just honest advice from Rita about what your skin needs.</p>
+  <a href="#" class="btn-primary">Book Your Free Assessment</a>
+</section>
+
+<footer>
+  <p>Infinity Skin Care Clinic &middot; Kalkallo, VIC &middot; Serving Kalkallo, Craigieburn, Mickleham, Donnybrook &amp; the Northern Corridor</p>
+</footer>
+
+</body>
+</html>
