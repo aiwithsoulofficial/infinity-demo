@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Infinity Skin Care Clinic  -  Growth Roadmap | Clinic Catalyst</title>
+<title>Infinity Skin Care Clinic - Growth Roadmap | Clinic Catalyst</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -158,8 +158,8 @@ p{
   opacity:0.5;
 }
 
-/* ─── SECTION 2: WHERE YOU ARE NOW ──────────────────── */
-#opportunity{background:var(--white)}
+/* ─── SECTION 2: WHAT YOU'VE BUILT ────────────────────── */
+#built{background:var(--white)}
 
 .section-header{margin-bottom:56px}
 .section-header .label{margin-bottom:16px}
@@ -169,213 +169,145 @@ p{
   max-width:660px;
 }
 
-.cards-grid{
+.built-list{
+  list-style:none;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+@media(max-width:640px){
+  .built-list{grid-template-columns:1fr}
+}
+
+.built-list li{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  font-size:0.95rem;
+  color:rgba(10,42,40,0.75);
+  font-weight:400;
+  padding:20px 24px;
+  background:var(--light-bg);
+  border-left:3px solid var(--teal);
+}
+
+.built-list li .check{
+  color:var(--teal);
+  font-weight:700;
+  font-size:1.1rem;
+  flex-shrink:0;
+  margin-top:-1px;
+}
+
+/* ─── SECTION 3: POSITIONING ──────────────────────────── */
+#positioning{background:var(--light-bg)}
+
+.positioning-box{
+  background:var(--white);
+  padding:48px 44px;
+  border-left:4px solid var(--gold);
+  max-width:800px;
+}
+
+.positioning-box h3{
+  font-family:'Montserrat',sans-serif;
+  font-weight:700;
+  font-size:1.1rem;
+  letter-spacing:0.04em;
+  color:var(--dark);
+  margin-bottom:16px;
+}
+
+.positioning-box p{
+  font-size:0.95rem;
+  color:rgba(10,42,40,0.7);
+  margin-bottom:12px;
+}
+
+.positioning-box p:last-child{margin-bottom:0}
+
+/* ─── SECTION 4: QUICK WINS ──────────────────────────── */
+#wins{background:var(--white)}
+
+.wins-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:2px;
   background:rgba(10,42,40,0.08);
 }
 
-@media(max-width:640px){
-  .cards-grid{grid-template-columns:1fr}
+@media(max-width:768px){
+  .wins-grid{grid-template-columns:1fr}
 }
 
-.insight-card{
+.win-card{
   background:var(--white);
-  padding:40px 36px;
+  padding:44px 36px;
   position:relative;
 }
 
-.insight-card::before{
+.win-card::before{
   content:"";
   position:absolute;
   top:0;left:0;
-  width:3px;
-  height:100%;
+  width:100%;
+  height:3px;
   background:var(--teal);
 }
 
-.insight-number{
-  font-family:'Montserrat',sans-serif;
-  font-weight:900;
-  font-size:2.8rem;
-  color:rgba(0,212,188,0.1);
-  line-height:1;
-  margin-bottom:12px;
-  display:block;
-}
-
-.insight-card h3{
-  font-family:'Montserrat',sans-serif;
-  font-weight:700;
-  font-size:0.95rem;
-  letter-spacing:0.04em;
-  text-transform:uppercase;
-  color:var(--dark);
-  margin-bottom:12px;
-}
-
-.insight-card p{
-  font-size:0.9rem;
-  color:rgba(10,42,40,0.65);
-}
-
-/* ─── SECTION 3: WHERE WE TAKE YOU ──────────────────── */
-#plan{background:var(--light-bg)}
-
-.phases-container{
-  position:relative;
-  padding-left:48px;
-}
-
-.phases-container::before{
-  content:"";
-  position:absolute;
-  left:15px;
-  top:20px;
-  bottom:20px;
-  width:2px;
-  background:linear-gradient(to bottom, var(--teal), rgba(0,212,188,0.15));
-}
-
-@media(max-width:640px){
-  .phases-container{padding-left:36px}
-  .phases-container::before{left:11px}
-}
-
-.phase{
-  position:relative;
-  margin-bottom:52px;
-}
-
-.phase:last-child{margin-bottom:0}
-
-.phase-dot{
-  position:absolute;
-  left:-48px;
-  top:4px;
-  width:32px;
-  height:32px;
-  background:var(--dark);
-  border:2px solid var(--teal);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-shrink:0;
-}
-
-@media(max-width:640px){
-  .phase-dot{left:-36px;width:24px;height:24px}
-  .phase-dot svg{width:10px;height:10px}
-}
-
-.phase-dot svg{
-  width:12px;height:12px;
-  fill:var(--teal);
-}
-
-.phase-timing{
+.win-category{
   font-family:'Montserrat',sans-serif;
   font-weight:700;
   font-size:0.62rem;
   letter-spacing:0.2em;
   text-transform:uppercase;
   color:var(--teal);
-  margin-bottom:6px;
+  margin-bottom:10px;
   display:block;
 }
 
-.phase h3{
+.win-card h3{
   font-family:'Montserrat',sans-serif;
   font-weight:800;
-  font-size:1.15rem;
-  letter-spacing:0.04em;
-  text-transform:uppercase;
+  font-size:1rem;
+  letter-spacing:0.02em;
   color:var(--dark);
-  margin-bottom:20px;
+  margin-bottom:14px;
 }
 
-.phase-items{
-  list-style:none;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
-
-.phase-items li{
-  display:flex;
-  align-items:flex-start;
-  gap:12px;
+.win-card p{
   font-size:0.9rem;
-  color:rgba(10,42,40,0.7);
-  font-weight:400;
+  color:rgba(10,42,40,0.65);
 }
 
-.phase-items li::before{
-  content:"";
-  display:block;
-  width:6px;
-  height:6px;
-  background:var(--teal);
-  flex-shrink:0;
-  margin-top:8px;
+/* ─── BONUS CARD ──────────────────────────────────────── */
+.bonus-section{
+  margin-top:2px;
+  background:rgba(10,42,40,0.08);
 }
 
-/* ─── SECTION 4: WHY CLINIC CATALYST ────────────────── */
-#why{
-  background-color:var(--dark);
-  background-image:var(--dot-grid);
-  background-size:32px 32px;
-  position:relative;
-  overflow:hidden;
-}
-
-#why::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:radial-gradient(ellipse 80% 50% at 50% 50%, rgba(0,212,188,0.05) 0%, transparent 70%);
-  pointer-events:none;
-}
-
-#why .container{position:relative;z-index:1}
-
-#why .section-header h2{
-  color:var(--white);
-  font-size:clamp(1.4rem,3vw,2rem);
-  max-width:700px;
-}
-
-.why-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:2px;
-  background:rgba(0,212,188,0.08);
-}
-
-@media(max-width:768px){
-  .why-grid{grid-template-columns:1fr}
-}
-
-.why-card{
-  background:rgba(10,42,40,0.95);
+.bonus-card{
+  background:var(--warm-bg);
   padding:44px 36px;
-  border-top:2px solid var(--teal);
+  position:relative;
+  border-left:4px solid var(--gold);
 }
 
-.why-card h3{
+.bonus-card .win-category{color:var(--gold)}
+
+.bonus-card h3{
   font-family:'Montserrat',sans-serif;
-  font-weight:700;
-  font-size:0.9rem;
-  letter-spacing:0.06em;
-  text-transform:uppercase;
-  color:var(--white);
-  margin-bottom:16px;
+  font-weight:800;
+  font-size:1rem;
+  letter-spacing:0.02em;
+  color:var(--dark);
+  margin-bottom:14px;
 }
 
-.why-card p{
+.bonus-card p{
   font-size:0.9rem;
-  color:rgba(200,240,236,0.65);
+  color:rgba(10,42,40,0.65);
 }
 
 /* ─── SECTION 5: NEXT STEP ───────────────────────────── */
@@ -483,139 +415,97 @@ footer p{
   </div>
 </section>
 
-<!-- ─── SECTION 2: WHERE YOU ARE NOW ─────────────────── -->
-<section id="opportunity" class="section" aria-label="The Opportunity">
+<!-- ─── SECTION 2: WHAT YOU'VE BUILT ─────────────────── -->
+<section id="built" class="section" aria-label="What You've Built">
   <div class="container">
     <div class="section-header">
-      <span class="label">The Opportunity</span>
-      <h2>You have incredible results.<br>Your website isn't showing them.</h2>
+      <span class="label">What You've Built</span>
+      <h2>You've done the hard part. The clinical results are there.</h2>
     </div>
-    <div class="cards-grid" role="list">
+    <ul class="built-list" role="list">
+      <li><span class="check" aria-hidden="true">&#10003;</span>Established clinic with loyal repeat clients in Kalkallo</li>
+      <li><span class="check" aria-hidden="true">&#10003;</span>Stunning before and after results across multiple treatments</li>
+      <li><span class="check" aria-hidden="true">&#10003;</span>Timely booking system already handling appointments</li>
+      <li><span class="check" aria-hidden="true">&#10003;</span>Strong Google review base building organic trust</li>
+      <li><span class="check" aria-hidden="true">&#10003;</span>Active social presence showing real client transformations</li>
+      <li><span class="check" aria-hidden="true">&#10003;</span>Clear treatment menu with defined pricing</li>
+    </ul>
+  </div>
+</section>
 
-      <article class="insight-card" role="listitem">
-        <span class="insight-number" aria-hidden="true">01</span>
-        <h3>Your B&amp;A photos are buried</h3>
-        <p>Your before and after results are stunning - but they're hidden in a carousel halfway down the page. Most visitors never see them.</p>
-      </article>
-
-      <article class="insight-card" role="listitem">
-        <span class="insight-number" aria-hidden="true">02</span>
-        <h3>Every non-ready visitor is lost</h3>
-        <p>Your only CTA is 'Book Appointment'. Anyone who isn't ready today has no way to stay connected with you.</p>
-      </article>
-
-      <article class="insight-card" role="listitem">
-        <span class="insight-number" aria-hidden="true">03</span>
-        <h3>Google can't read your site</h3>
-        <p>Your heading structure is broken at a technical level. Search engines are struggling to index your content properly.</p>
-      </article>
-
-      <article class="insight-card" role="listitem">
-        <span class="insight-number" aria-hidden="true">04</span>
-        <h3>Your team is answering phones instead of treating</h3>
-        <p>Every call your team answers manually is time away from clients. After-hours calls go completely unanswered.</p>
-      </article>
-
+<!-- ─── SECTION 3: POSITIONING ────────────────────────── -->
+<section id="positioning" class="section" aria-label="Where You Should Be Positioned">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">Positioning</span>
+      <h2>Where you should be sitting in people's minds.</h2>
+    </div>
+    <div class="positioning-box">
+      <h3>The skin transformation specialist for the northern corridor</h3>
+      <p>Right now you're competing as "another skin clinic." But your results tell a different story. You're solving visible skin problems that affect confidence - acne scarring, pigmentation, ageing - and delivering transformations people can see.</p>
+      <p>The positioning shift: from "treatments available" to "the clinic that fixes what others couldn't." Every piece of marketing, every page, every ad should reinforce that you're the destination for visible results - not just another facial menu.</p>
+      <p>This matters because the Kalkallo-Craigieburn corridor is growing fast with limited competition. The clinic that claims the "transformation expert" position now will own it for years.</p>
     </div>
   </div>
 </section>
 
-<!-- ─── SECTION 3: WHERE WE TAKE YOU ─────────────────── -->
-<section id="plan" class="section" aria-label="The Plan">
+<!-- ─── SECTION 4: QUICK WINS ─────────────────────────── -->
+<section id="wins" class="section" aria-label="Quick Wins">
   <div class="container">
     <div class="section-header">
-      <span class="label">The Plan</span>
-      <h2>Four phases. Visible results at every stage.</h2>
+      <span class="label">Quick Wins</span>
+      <h2>One big move in each area that shifts the needle.</h2>
     </div>
 
-    <div class="phases-container" role="list">
+    <div class="wins-grid" role="list">
 
-      <article class="phase" role="listitem">
-        <div class="phase-dot" aria-hidden="true">
-          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="6" r="4"/></svg>
-        </div>
-        <span class="phase-timing">Week 1</span>
-        <h3>Phase 1  -  Instant Wins</h3>
-        <ul class="phase-items">
-          <li>Problem-focused landing pages with your B&A results front and centre</li>
-          <li>Skin concern assessment that captures leads 24/7</li>
-          <li>Free consultation offer replacing generic booking</li>
-          <li>Google reviews displayed where they build instant trust</li>
-        </ul>
+      <article class="win-card" role="listitem">
+        <span class="win-category">Branding & Positioning</span>
+        <h3>Lead with transformations, not treatments</h3>
+        <p>Reframe everything around the problem you solve ("I finally feel confident without makeup") rather than the service you deliver ("fractional RF microneedling"). Your B&A photos are your brand - make them the first thing people see everywhere.</p>
       </article>
 
-      <article class="phase" role="listitem">
-        <div class="phase-dot" aria-hidden="true">
-          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="6" r="4"/></svg>
-        </div>
-        <span class="phase-timing">Weeks 2 – 3</span>
-        <h3>Phase 2  -  Conversion System</h3>
-        <ul class="phase-items">
-          <li>Full website rebuild around 3 client concern pathways</li>
-          <li>Individual treatment pages optimised for local search</li>
-          <li>AI search visibility so ChatGPT and Perplexity recommend you</li>
-          <li>Automated review collection after every appointment</li>
-        </ul>
+      <article class="win-card" role="listitem">
+        <span class="win-category">Website Improvements</span>
+        <h3>Concern-based landing pages that rank locally</h3>
+        <p>Replace your single services page with dedicated pages for each skin concern - acne scarring, pigmentation, anti-ageing. Each page shows your real results for that problem, answers the questions people search, and gives Google a reason to rank you for "acne scar treatment Kalkallo."</p>
       </article>
 
-      <article class="phase" role="listitem">
-        <div class="phase-dot" aria-hidden="true">
-          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="6" r="4"/></svg>
-        </div>
-        <span class="phase-timing">Weeks 3 – 4</span>
-        <h3>Phase 3  -  Aria Voice Agent</h3>
-        <ul class="phase-items">
-          <li>Every call answered - even when your team is with clients</li>
-          <li>After-hours bookings captured automatically</li>
-          <li>Appointment confirmations and reminders</li>
-          <li>Your team freed to focus on treatments, not phones</li>
-        </ul>
+      <article class="win-card" role="listitem">
+        <span class="win-category">Offer & Pricing Strategy</span>
+        <h3>Free skin assessment as your front door</h3>
+        <p>Stop asking cold visitors to book a paid treatment. Offer a free 15-minute skin assessment that lets people experience your expertise with zero risk. This converts browsers into booked clients at 3-4x the rate of a generic "book now" button.</p>
       </article>
 
-      <article class="phase" role="listitem">
-        <div class="phase-dot" aria-hidden="true">
-          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="6" r="4"/></svg>
-        </div>
-        <span class="phase-timing">Month 2+</span>
-        <h3>Phase 4  -  Paid Growth</h3>
-        <ul class="phase-items">
-          <li>Targeted ads across the Kalkallo-Craigieburn corridor</li>
-          <li>Your real B&A photos as ad creative</li>
-          <li>Retargeting visitors who showed interest but didn't book</li>
-          <li>Low competition in your area means stronger returns</li>
-        </ul>
+      <article class="win-card" role="listitem">
+        <span class="win-category">Advertising</span>
+        <h3>Your B&A photos as geo-targeted Meta ads</h3>
+        <p>Run your real before and after results as ads targeted to women 25-55 within 15km. Your results are the creative - no graphic design needed. Low competition in the northern corridor means cheaper clicks and faster payback than inner-city clinics.</p>
+      </article>
+
+      <article class="win-card" role="listitem">
+        <span class="win-category">CRM & Systems</span>
+        <h3>Automated review collection after every appointment</h3>
+        <p>Trigger a review request 2 hours after every completed appointment. Clinics that do this consistently double their Google reviews within 90 days - and reviews are the single biggest trust signal for someone choosing between you and a competitor.</p>
+      </article>
+
+      <article class="win-card" role="listitem">
+        <span class="win-category">Tech Stack & Operations</span>
+        <h3>Every lead contacted within 5 minutes</h3>
+        <p>Speed wins. When a lead comes in, our team calls, texts, and DMs them within 5 minutes - before they've even finished browsing your competitor. Most clinics take 24-48 hours to respond. By then the lead is cold and booked elsewhere. Fast follow-up alone can double your conversion rate.</p>
       </article>
 
     </div>
-  </div>
-</section>
 
-<!-- ─── SECTION 4: WHY CLINIC CATALYST ───────────────── -->
-<section id="why" class="section" aria-label="Why Clinic Catalyst">
-  <div class="container">
-    <div class="section-header">
-      <span class="label">Why Us</span>
-      <h2>This isn't an agency.<br>This is a growth partner.</h2>
+    <!-- BONUS -->
+    <div class="bonus-section">
+      <article class="bonus-card">
+        <span class="win-category">Bonus: Lead Magnet</span>
+        <h3>"What's really causing your skin concern?" - interactive quiz</h3>
+        <p>A 60-second skin assessment quiz that captures name, email, phone, and skin concern - then recommends a treatment pathway and offers the free consultation. This gives you a list of warm leads to nurture, even if they don't book today. It runs 24/7 and builds your database on autopilot.</p>
+      </article>
     </div>
 
-    <div class="why-grid" role="list">
-
-      <article class="why-card" role="listitem">
-        <h3>We don't just run ads</h3>
-        <p>We build the entire system - from the moment someone searches for help with their skin, to the moment they walk through your door.</p>
-      </article>
-
-      <article class="why-card" role="listitem">
-        <h3>Built for clinics</h3>
-        <p>Every tool, every page, every automation is designed specifically for appointment-based businesses. Not retail. Not e-commerce. Clinics.</p>
-      </article>
-
-      <article class="why-card" role="listitem">
-        <h3>Real results, real proof</h3>
-        <p>We show you exactly what's working, what's converting, and where your next clients are coming from. No vanity metrics.</p>
-      </article>
-
-    </div>
   </div>
 </section>
 
@@ -625,7 +515,7 @@ footer p{
     <div class="nextstep-inner">
       <span class="label" style="margin-bottom:20px">Your Move</span>
       <h2>Let's talk about your clinic.</h2>
-      <p class="lead">Everything you've seen in this demo package was built specifically for Infinity Skin Care Clinic. Let's walk through it together and map out exactly how we'd fill your chairs.</p>
+      <p class="lead">This roadmap was built specifically for Infinity Skin Care Clinic. Let's walk through it together and map out exactly how we'd fill your chairs.</p>
       <a
         href="https://bookings.gettimely.com/infinityskincareclinic"
         class="cta-btn"
